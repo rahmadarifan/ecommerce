@@ -3,6 +3,7 @@
 use App\Product;
 use App\Transaction;
 use App\Pelanggan;
+use App\Kategori;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Input;
@@ -26,6 +27,17 @@ class TokoController extends Controller {
 	return view('toko.detail')->with('product', $product);
 	} 
 	
+	public function showProductsOfCategory($kategori) {
+		$kategori = Kategori::where('name', '=', $kategori)->first();
+
+		if (count($kategori) != 0) {
+			$product = $kategori->products()->orderBy('id','desc')->paginate(4);
+			$product->setPath('');
+			return view('toko.productlist')->with('product', $product);
+		} else {
+			abort(404);
+		}
+	}
 	 
 	public function tambahItem($id) 
 	{

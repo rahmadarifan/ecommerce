@@ -15,22 +15,24 @@
 
 //Route::get('home', 'HomeController@index');
 
-/* Route Model Binding */
+
 Route::model('product','App\Product');
 Route::model('laporan','App\Transaction');
 
-/* Route Untuk Autentikasi Admin */
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
-/* Route Untuk Pengunjung */
+
 Route::get('/', 'TokoController@index');
 
 Route::get('/product/{id}/show',['as' => 'product.show','uses' => 'TokoController@showItem']);
 
 Route::get('product/cart/{id}', 'TokoController@tambahItem');
+
+Route::get('product/{kategori}', 'TokoController@showProductsOfCategory');
 
 Route::get('cart/delete/{id}' , 'TokoController@hapusItem');
 
@@ -38,7 +40,7 @@ Route::get('cart/checkout', 'TokoController@checkout');
 
 Route::post('/cart/{form_id}/save',['as' => 'pelanggan.save','uses' => 'TokoController@savePelanggan']);
 
-/* Route Untuk Administrator */
+
 Route::group( [
     'middleware' => 'auth' ,
         ] , function() {

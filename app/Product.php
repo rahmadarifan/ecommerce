@@ -12,4 +12,8 @@ class Product extends Model {
     return $this->hasMany('App\Transaction','product_id');
   }
 
+  public function kategori() {
+    return $this->belongsTo('App\Kategori');
+  }
+
 }

@@ -40,9 +40,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}">Home</a>
-								<a class="navbar-brand" href="{{ url('/') }}">kaos</a>
-								<a class="navbar-brand" href="{{ url('/') }}">kemeja</a>
-								<a class="navbar-brand" href="{{ url('/') }}">jaket</a>
+								<a class="navbar-brand" href="{{ url('/product/kaos') }}">kaos</a>
+								<a class="navbar-brand" href="{{ url('/product/kemeja') }}">kemeja</a>
+								<a class="navbar-brand" href="{{ url('/product/jaket') }}">jaket</a>
 						</div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
