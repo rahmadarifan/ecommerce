@@ -45,7 +45,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url('/') }}">about us</a>
+                        <a href="{{ url('jaket') }}">jaket</a>
+												<a href="{{ url('kaos') }}">kaos</a>
+												<a href="{{ url('kemeja') }}">kemeja</a>
+		                    <a href="{{ url('about') }}">about us</a>
                     </li>
                 </ul>
 			<nav class="navbar-form navbar-right" role="search">
