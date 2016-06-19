@@ -1,5 +1,5 @@
 @extends('toko.master')
-				
+
 @section('content')
 
 			<article>
@@ -9,7 +9,7 @@
 			          	<div class="col-sm-6 col-md-6">
 			          	</div>
 			          	<div class="col-sm-6 col-md-6">
-		          		
+
 			          	</div>
 			          </div>
 
@@ -18,15 +18,11 @@
 			          <img src="{{ asset($product->image) }}" class="img-responsive"></div>
 		          <br />
 
-			          <p>{{$product->description}}</p>
+			          <p class="details">{{$product->description}}</p>
 					  <p class="text-right">
 					  </p>
 					  <p class="text-center">
-					   <a href="{!! url('product/cart/'.$product->id) !!}" class="btn-lg btn-primary">Beli</a></p>
+					   <a href="{!! url('product/cart/'.$product->id) !!}" class="btn-lg btn-primary btn-large">Beli</a></p>
 			          <hr>
 				</article>
 @endsection
-
-
-
-				

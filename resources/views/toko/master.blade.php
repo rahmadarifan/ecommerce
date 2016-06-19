@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,11 @@
  <title>Toko Online Laravel 5</title>
 
     <!-- Bootstrap Core CSS -->
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/toko.css') }}" rel="stylesheet">
 
-	
+	<link href="{{ asset('/css/toko.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,24 +39,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">Toko Online Laravel 5</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url('/') }}">Home</a>
+                        <a href="{{ url('/') }}">about us</a>
                     </li>
                 </ul>
 			<nav class="navbar-form navbar-right" role="search">
 			@if (Auth::guest())
 				  <a href="{{ url('/auth/login') }}" class="btn btn-info" role="button">Login</a>
                   <a href="{{ url('/auth/register') }}" class="btn btn-info" role="button">Register</a>
-			@else 
+			@else
 				  <a href="{{ url('/dashboard') }}" class="btn btn-warning" role="button">Dashboard</a>
 				  <a href="{{ url('/auth/logout') }}" class="btn btn-success" role="button">Logout</a>
 			@endif
-		   </nav>	
+		   </nav>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -67,9 +68,7 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Toko Online Laravel!</h1>
-            <p>Selamat datang di toko online dengan platform Laravel 5.</p>
-            <p><a class="btn btn-primary btn-large">Selamat Berbelanja!</a>
+            <h1>Welcome on Our Shop</h1>
             </p>
         </header>
 
