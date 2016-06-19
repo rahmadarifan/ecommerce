@@ -23,37 +23,21 @@
 <body>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
+			@if (Auth::guest())
+			@else
+				<a class="navbar-brands" href="{{ url('/') }}">Lihat Toko</a>
+				<a class="navbar-brands" href="#" class="dropdown-toggle" role="button">{{ Auth::user()->name }}</a>
+				<a class="navbar-brands" href="{{ url('/auth/logout') }}">Logout</a>
+			@endif
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Toko Online Laravel 5</a>
-			</div>
+			@if (Auth::guest())
+				<a class="navbar-brand" href="{{ url('/') }}">Home</a>
+			@else
+			<a class="navbar-brand" href="{{ url('/dashboard') }}">Home</a>
+				<a class="navbar-brand" href="{{ url('dashboard/product') }}">Data produk</a>
+				<a class="navbar-brand" href="{{ url('/dashboard/laporan') }}#">Laporan Transaksi</a>
+			@endif
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-				@if (Auth::guest())
-					<li><a href="{{ url('/') }}">Home</a></li>
-				@else
-					<li><a href="{{ url('/dashboard') }}">Home</a></li>
-					<li><a href="{{ url('dashboard/product') }}">Data Produk</a></li>
-					<li><a href="{{ url('/dashboard/laporan') }}">Laporan Transaksi</a></li>
-				@endif
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-					@else
-					<li><a href="{{ url('/') }}">Lihat Toko</a></li>
-						<li>
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-						</li>
-					@endif
-				</ul>
 			</div>
 		</div>
 	</nav>
