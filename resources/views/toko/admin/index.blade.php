@@ -1,5 +1,5 @@
 @extends('app')
- 
+
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -24,7 +24,9 @@
 			</table>
 			 <p>{!!$product->render()!!} </p>
  			  <p>
+          <button class="btn btn-primary">
     		  {!! link_to_route('dashboard.product.create', 'Tambah Produk') !!}
+        </button>
   			  </p>
 				</div>
 			</div>
@@ -32,5 +34,3 @@
 	</div>
 </div>
 @endsection
-
-
