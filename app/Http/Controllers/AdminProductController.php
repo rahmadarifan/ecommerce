@@ -57,11 +57,13 @@ class AdminProductController extends Controller {
     	$extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
     	$fileName = rand(11111,99999).'.'.$extension; // renaming image
     	Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
-		$input['image'] =$destinationPath. '/'.$fileName;
+		$input['image'] = $destinationPath. '/'.$fileName;
+		// dd($input);
 		Product::create( $input );
 		return Redirect::route('dashboard.product.index')->with('message', 'Product Create');
 		}
 		}else {
+		dd(Input::hasFile('image'));
 		Product::create( $input );
 		return Redirect::route('dashboard.product.index')->with('message', 'Product Produk Create');
 	}
